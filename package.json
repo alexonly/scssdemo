@@ -1,0 +1,17 @@
+{
+  "name": "j",
+  "version": "1.0.0",
+  "description": "sassdemo experience",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp",
+	"rubyon": "cmd.exe /E:ON /K d:\\Ruby23-x64\\bin\\setrbvars.bat"
+  },
+  "author": "alex Hsu",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0"
+  }
+
+}

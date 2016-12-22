@@ -1,0 +1,22 @@
+=animateAll($time)
+ -webkit-transition: all $time ease-in-out
+ -moz-transition: all $time ease-in-out
+ -o-transition: all $time ease-in-out
+ transition: all $time ease-in-out
+
+.animatedElement
+ +animateAll(5s) 
+
+.font-small 
+ font-family : Arial
+ font-size : 120px
+ font-weight: normal
+
+.font-samll-red
+ @extend .font-small
+ color : red 
+a 
+ color : #000
+
+ &:hover
+  color : #foo

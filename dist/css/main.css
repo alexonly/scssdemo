@@ -1,0 +1,46 @@
+.animatedElement {
+  -webkit-transition: all 5s ease-in-out;
+  -moz-transition: all 5s ease-in-out;
+  -o-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+}
+
+.font-small, .font-samll-red {
+  font-family: Arial;
+  font-size: 120px;
+  font-weight: normal;
+}
+
+.font-samll-red {
+  color: red;
+}
+
+a {
+  color: #000;
+}
+a:hover {
+  color: #foo;
+}
+
+.grid-1of2 {
+  width: 50%;
+  background: blue;
+}
+
+[class^="grid"] {
+  float: left;
+}
+
+[data-style~="green"] {
+  color: green;
+}
+
+.container:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/*# sourceMappingURL=main.css.map */
