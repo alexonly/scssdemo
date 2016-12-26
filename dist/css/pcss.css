@@ -37,4 +37,125 @@
   background: red;
 }
 
+p, span {
+  background: red;
+}
+p.width300, span.width300 {
+  width: 300px;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.main-navigation ul {
+  list-style: none;
+}
+.main-navigation li {
+  display: inline-block;
+}
+
+.equalizer {
+  display: table;
+  background: orange;
+  border: 1px solid black;
+  border-spacing: 1px;
+}
+
+.equalized {
+  display: table-cell;
+  background: #e6fffd;
+}
+
+.top10minus {
+  position: relative;
+  top: -10px;
+}
+
+.relative {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: #d051fb;
+  position: relative;
+}
+
+.absolute {
+  width: 40px;
+  height: 40px;
+  background: #7bfb51;
+  position: absolute;
+  z-index: 1;
+}
+
+.ab2 {
+  background: #fcbf83;
+  width: 60px;
+  height: 60px;
+}
+
+.fixed {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: #d4c4ee;
+}
+
+body {
+  padding-top: 100px;
+}
+
+.relativeblock1 {
+  position: relative;
+  width: 200px;
+  height: 80px;
+  background: #e7eec4;
+  z-index: 50;
+}
+
+.absoluteblock1 {
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  width: 40px;
+  height: 40px;
+  background: #c65353;
+  z-index: 1;
+}
+
+.relativeblock2 {
+  position: static;
+  width: 200px;
+  height: 80px;
+  background: #c4e7ee;
+  z-index: 99;
+}
+
+article {
+  position: relative;
+  padding: 10px;
+  padding-left: 220px;
+  height: 220px;
+  background: #a50d0d;
+}
+article .imageclass {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  
+  width: 200px;
+  height: 200px;
+}
+article .contentclass {
+  margin: 10px;
+  width: 100%;
+}
+
+img {
+  max-width: 90%;
+}
+
 /*# sourceMappingURL=pcss.css.map */
