@@ -9,6 +9,52 @@
   height: 0
   clear: both
 
+=colorplaceholder
+ &:-ms-input-placeholder,
+ &:-moz-placeholder,
+ &::-webkit-input-placeholder
+  color: red
+
+=rectangle($w, $h, $c)
+ width: $w
+ height: $h
+ background: $c
+
+=circle($r, $c)
+ width: $r
+ height: $r
+ border-radius: 50%
+ background: $c
+
+=triangleup($width, $height, $color)
+ width: 0
+ height: 0
+ border-width: 0 $height/2 $width $height/2
+ border-color: transparent transparent $color transparent
+ border-style: solid
+
+=triangledown($width, $height, $color)
+ width: 0
+ height: 0
+ border-width: $width $height/2 0 $height/2
+ border-color: $color transparent transparent transparent
+ border-style: solid
+
+=triangleleft($width, $height, $color)
+ width: 0
+ height: 0
+ border-width: $height/2 $width $height/2 0
+ border-color: transparent $color transparent transparent
+ border-style: solid
+
+=triangleright($width, $height, $color)
+ width: 0
+ height: 0
+ border-width: $height/2 0 $height/2 $width
+ border-color: transparent transparent transparent $color
+ border-style: solid
+
+
 .row
  +clearfix 
 
@@ -126,6 +172,7 @@ article
   left: 220px
  height: 220px
  background: hsl(360, 85%, 35%)
+ margin: 30px
 
  .imageclass
   position: absolute
@@ -141,4 +188,173 @@ article
 
 img 
  max-width: 100%
+
+a
+ color: hsl(30, 80%, 25% ) 
+ background: hsla( 250, 80%, 65%, 0.8)
+ 
+ &:hover
+  color: hsl(250, 80%, 65%) 
+  background: hsl(180, 80%, 65%)
+
+ul.ulp1,
+ul.ulp1 ul
+ +clearfix
+ list-style: none
+ padding: 0
+ 
+ >li
+  position: relative
+  display: block
+  margin-right: 10px
+  &:hover ul
+   display: block 
+   width: 200px
+   
+
+ ul
+  display: none
+  // if we use absolute porp , we might overide the content below because it seems donnot exist to other dom obj	
+ // position: absolute  
+ // left : 0 
+
+ul.ulp1 > li
+ float: left  
+ display: inline-block
+ border : solid blue 1px
+
+ul
+ border : red 1px solid
+
+tbody
+ tr:nth-child(2n)
+  background: #d3d3d3 
+ td:nth-last-child(2n+1)
+  background: hsl(245, 85%, 65%) 
+
+ul.boxp
+ +clearfix
+ list-style: none
+
+ul.boxp
+ li
+  width: 100px
+  height: 100px
+  float: left
+  margin-left: 10px
+  border : dashed 1px hsl(67, 55%, 55%)
+  background:  hsl(300, 25%, 65%)
+
+  &:empty
+   background: hsl(65, 25%, 65%) 
+
+.simple_validate
+ padding: 10px
+ width: 400px
+
+ &:valid
+  background: lightblue
+
+ &:invalid
+  background: lightcoral 
+
+ label
+  display: inline-block
+  &:before
+   content: 'Not ' 
+
+ input
+  display: block
+  margin: 10px 0
+  width: 100%
+
+  &:valid
+   border: 3px solid green
+
+  &:invalid
+   border: 3px solid red  
+
+  &:focus
+   background: orange
+   color: red
+   border: 3px solid orange
+
+  &[type="checkbox"] 
+   display: inline-block
+   width: 20px  //set width to be adjustable
+
+   &:checked
+    & + label
+     color: red
+
+     &:before
+      content: 'Is '
+
+  +colorplaceholder   
+
+
+.retangle50
+ +rectangle(40px, 40px, hsl(370, 55%, 45%))
+
+.circle50
+ +circle(50px, hsl(120, 55%, 45%))
+
+.triangle
+ +clearfix
+ .triangleup
+  +triangleup(20px, 20px, hsl(125, 55%, 45%))
+ .triangledown
+  +triangledown(20px, 20px, hsl(125, 55%, 45%))
+ .triangleleft
+  +triangleleft(20px, 20px, hsl(125, 55%, 45%))
+ .triangleright
+  +triangleright(20px, 20px, hsl(125, 55%, 45%))  
+ 
+ & > div
+  float: left
+  margin-left: 5px
+
+a.beforeafter
+ border: 1px solid hsl(1, 0, 0 )
+
+ &:before
+  content: 'before'
+  color: hsl(300, 55%, 45%)
+
+ &:after
+  content: 'after' 
+  color: hsl(180, 55%, 45%)
+
+a.btnup
+
+ display: inline-block
+ border: 1px solid hsl(1, 0, 0) 
+  radius : 5px
+ padding: 10px 40px 10px 10px
+ position: relative
+ text-decoration: none
+ color : hsl (150, 55%, 45%)
   
+ &:after
+  display: block
+  position: absolute
+  right: 10px
+  top: 50%
+  content: ''  
+  +triangleup(20px, 20px, hsl(175, 55%, 45%))
+  margin-top : -10px
+
+p.firstleline
+ &:first-letter
+  color: hsl(355, 55%, 35%)  
+  font:
+   weight: bold
+   size: 50px
+
+ &:first-line
+  color: hsl(123, 55%, 45%)  
+
+::selection,
+::-moz-selection  
+ background: hsl(239, 55%, 65%)
+ color: hsl(355, 55%, 35%)

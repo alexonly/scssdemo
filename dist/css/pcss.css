@@ -140,12 +140,13 @@ article {
   padding-left: 220px;
   height: 220px;
   background: #a50d0d;
+  margin: 30px;
 }
 article .imageclass {
   position: absolute;
   left: 10px;
   top: 10px;
-  
+  background: #000;
   width: 200px;
   height: 200px;
 }
@@ -155,7 +156,234 @@ article .contentclass {
 }
 
 img {
-  max-width: 90%;
+  max-width: 100%;
+}
+
+a {
+  color: #73400d;
+  background: rgba(118, 94, 237, 0.8);
+}
+a:hover {
+  color: #765eed;
+  background: #5eeded;
+}
+
+ul.ulp1,
+ul.ulp1 ul {
+  list-style: none;
+  padding: 0;
+}
+ul.ulp1:after,
+ul.ulp1 ul:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+ul.ulp1 > li,
+ul.ulp1 ul > li {
+  position: relative;
+  display: block;
+  margin-right: 10px;
+}
+ul.ulp1 > li:hover ul,
+ul.ulp1 ul > li:hover ul {
+  display: block;
+  width: 200px;
+}
+ul.ulp1 ul,
+ul.ulp1 ul ul {
+  display: none;
+}
+
+ul.ulp1 > li {
+  float: left;
+  display: inline-block;
+  border: solid blue 1px;
+}
+
+ul {
+  border: red 1px solid;
+}
+
+tbody tr:nth-child(2n) {
+  background: #d3d3d3;
+}
+tbody td:nth-last-child(2n+1) {
+  background: #675af2;
+}
+
+ul.boxp {
+  list-style: none;
+}
+ul.boxp:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+ul.boxp li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 10px;
+  border: dashed 1px #bdcb4d;
+  background: #bc8fbc;
+}
+ul.boxp li:empty {
+  background: #b8bc8f;
+}
+
+.simple_validate {
+  padding: 10px;
+  width: 400px;
+}
+.simple_validate:valid {
+  background: lightblue;
+}
+.simple_validate:invalid {
+  background: lightcoral;
+}
+.simple_validate label {
+  display: inline-block;
+}
+.simple_validate label:before {
+  content: "Not ";
+}
+.simple_validate input {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+}
+.simple_validate input:valid {
+  border: 3px solid green;
+}
+.simple_validate input:invalid {
+  border: 3px solid red;
+}
+.simple_validate input:focus {
+  background: orange;
+  color: red;
+  border: 3px solid orange;
+}
+.simple_validate input[type="checkbox"] {
+  display: inline-block;
+  width: 20px;
+}
+.simple_validate input[type="checkbox"]:checked + label {
+  color: red;
+}
+.simple_validate input[type="checkbox"]:checked + label:before {
+  content: "Is ";
+}
+.simple_validate input:-ms-input-placeholder, .simple_validate input:-moz-placeholder, .simple_validate input::-webkit-input-placeholder {
+  color: red;
+}
+
+.retangle50 {
+  width: 40px;
+  height: 40px;
+  background: #b24934;
+}
+
+.circle50 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #34b234;
+}
+
+.triangle:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.triangle .triangleup {
+  width: 0;
+  height: 0;
+  border-width: 0 10px 20px 10px;
+  border-color: transparent transparent #34b23e transparent;
+  border-style: solid;
+}
+.triangle .triangledown {
+  width: 0;
+  height: 0;
+  border-width: 20px 10px 0 10px;
+  border-color: #34b23e transparent transparent transparent;
+  border-style: solid;
+}
+.triangle .triangleleft {
+  width: 0;
+  height: 0;
+  border-width: 10px 20px 10px 0;
+  border-color: transparent #34b23e transparent transparent;
+  border-style: solid;
+}
+.triangle .triangleright {
+  width: 0;
+  height: 0;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #34b23e;
+  border-style: solid;
+}
+.triangle > div {
+  float: left;
+  margin-left: 5px;
+}
+
+a.beforeafter {
+  border: 1px solid black;
+}
+a.beforeafter:before {
+  content: "before";
+  color: #b234b2;
+}
+a.beforeafter:after {
+  content: "after";
+  color: #34b2b2;
+}
+
+a.btnup {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 40px 10px 10px;
+  position: relative;
+  text-decoration: none;
+  color: hsl 150, 55%, 45%;
+}
+a.btnup:after {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 0 10px 20px 10px;
+  border-color: transparent transparent #34b2a7 transparent;
+  border-style: solid;
+  margin-top: -10px;
+}
+
+p.firstleline:first-letter {
+  color: #8a2830;
+  font-weight: bold;
+  font-size: 50px;
+}
+p.firstleline:first-line {
+  color: #34b23a;
+}
+
+::selection
+ {
+  background: #7576d7;
+  color: #8a2830;
 }
 
 /*# sourceMappingURL=pcss.css.map */
