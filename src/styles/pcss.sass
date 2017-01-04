@@ -1,3 +1,15 @@
+//@import "compass"
+//@import "newsprite/*.png"
+//@include all-newsprite-sprites(true)
+
+@import "compass/utilities/sprites"
+$circles: sprite-map("newsprite/*.png", $spacing: 20px, $layout: diagonal)
+
+.element-circle-blue
+ background-image: sprite-url($circles)
+ background-position: sprite-position($circles, circle-blue)
+ @include sprite-dimensions($circles, circle-blue)
+
 *
  box-sizing: border-box
 
@@ -26,6 +38,14 @@
  border-radius: 50%
  background: $c
 
+=ring($size, $color, $borderwidth)
+ width: $size
+ height: $size
+ background: none
+ border-radius: 50%
+ border: solid $color $borderwidth
+
+
 =triangleup($width, $height, $color)
  width: 0
  height: 0
@@ -53,6 +73,8 @@
  border-width: $height/2 0 $height/2 $width
  border-color: transparent transparent transparent $color
  border-style: solid
+
+$imageRoot: "../img"
 
 
 .row
@@ -341,7 +363,7 @@ a.btnup
   right: 10px
   top: 50%
   content: ''  
-  +triangleup(20px, 20px, hsl(175, 55%, 45%))
+  +triangleup(10px, 20px, hsl(175, 55%, 45%))
   margin-top : -10px
 
 p.firstleline
@@ -358,3 +380,161 @@ p.firstleline
 ::-moz-selection  
  background: hsl(239, 55%, 65%)
  color: hsl(355, 55%, 35%)
+
+//rwd
+.mobile_on,
+.tablet_only,
+.desktop_only,
+.mobile_and_tablelet,
+.tableet_and_desktop
+ display: none
+
+// mobile
+@media screen and (max-width: 400px)
+ body
+  background: red
+
+ .mobile_on
+  display: block
+
+// mobiel and tableet  
+@media screen and (max-width: 700px)
+ .mobile_and_tablelet
+  display: block
+
+// tablet only
+@media screen and (min-width: 401px) and (max-width: 700px)  
+ body
+  background: hsl(333, 45%, 55%)
+
+ .tablet_only
+  display: block
+
+// tablet and desktop
+@media screen and (min-width: 401px) 
+ .tableet_and_desktop
+  display: block
+
+// desktop only
+@media screen and (min-width: 701px)  
+ .desktop_only
+  display: block
+
+@mixin mq($display, $breakpoint) 
+ @media #{$display} and #{$breakpoint}
+  @content
+
+$mq_small_only: "(max-width: 480px)"
+
+.floatnavigation
+ ul
+  +clearfix
+  list-style: none
+  padding: 0
+  background: transparent
+  border:
+   bottom: 10px solid hsl(120, 45%, 45%)
+
+ li
+  float: left
+  display: block
+ a
+  padding: 10px
+  display: block // if you don't set to block, you may get the unpredictable result while you also can adjust the width prop
+  width: 100%
+  background:    hsl(75, 45%, 65%)
+  text-decoration: none
+  color: hsl(120, 45%, 45%)
+
+  &:hover
+   background: hsl(120, 45%, 45%)
+   color: hsl(75, 45%, 65%)
+
+
+
+
++mq("screen", $mq_small_only)
+ .floatnavigation
+  ul
+   list-style: none
+   border: none
+
+  li
+   float: none
+   width: 100%
+
+  a
+   border:
+    bottom: 1px solid hsl(123, 45%, 35%)  
+
+.bkimg
+ width: 1000px
+ height: 500px
+ border: 3px solid hsl(360, 95%, 35%)
+ background:
+  image: url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg), url(#{$imageRoot}/borderedcircle.jpg)
+  repeat: no-repeat
+  position: left top, center top, right top, left center, center center, right center, left bottom, center bottom, right bottom
+  size: 50px auto, auto auto, auto auto, 100px auto, 200px auto, auto auto, auto auto, 50px auto, 75px auto    
+  
+
+.formc
+ width: 300px
+ input
+  width: 100%
+  margin:
+   bottom: 5px
+
+ input[type="text"]    
+  border: 2px solid hsl(240, 45%, 35%)
+
+ input[type="password"] 
+  border: 2px solid hsl(120, 45%, 35%)
+
+ input[type="submit"] 
+  color: hsl(0, 100%, 100%)
+  background: hsl(0, 0%, 0%)
+
+.loginWrapper,
+.passwordWrapper,
+.submitWrapper
+ position: relative
+
+ &:after
+  content: ''  
+  display: inline-block
+  position: absolute
+  right: 10px
+  top: 50%
+  box-sizing: border-box
+
+.loginWrapper,
+.passwordWrapper
+ &:after
+  transform: translate(0, -50%)
+  margin-top: -2.5px //important, because input hava margin-bottom 5px , needed to be divided by 2
+  +ring(10px, #000, 2px)
+
+.submitWrapper
+ &:after
+  box-sizing: border-box
+  transform: translate(0, -50%)
+  margin-top: -2.5px
+  +triangleright(8px, 8px, #fff)
+
+fieldset
+ width: auto
+ border: 2px dotted hsl(123, 45%, 45%) 
+
+.filedKeeper
+ position: relative
+
+ label
+  position: absolute
+  width: 150px
+  left: 0px  
+
+
+
+
+

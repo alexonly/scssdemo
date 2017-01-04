@@ -8,12 +8,14 @@ gulp.task('compass', function () {
 			sass: 'src/styles',
 			image: 'src/images',
 			css: 'dist/css',
+			generated_images_path: 'dist/img',
 			sourcemap: true
 		}));
 });	
 
 gulp.task('default', function () {
 	gulp.watch('src/**/*.sass', ['compass']);
+	gulp.watch('src/images/**/*', ['compass']);
 })
 
 

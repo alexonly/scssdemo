@@ -2,7 +2,30 @@
 <html>
 <head>
 	<title></title>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+	 window.addEventListener("load", showFrameSize);
+	 window.addEventListener("resize", showFrameSize);
+
+	 function showFrameSize() {
+	 	// alert("showframe");
+	 	var width, height, estimatedEle;
+	 	estimatedEle = document.getElementById("fixbar");
+	 	width = getcomputedstyle(estimatedEle, "width");
+	 	height = getcomputedstyle(estimatedEle, "height");
+	 	console.log("<span>" + width + " * " + height + "</span>");
+	 	estimatedEle.innerHTML = "<span>" + width + " * " + height + "</span>";
+	 }
+
+	 function getcomputedstyle(element, value) {
+	 	// alert("getcomputedvalue");
+	 	if (window.getComputedStyle) {
+	 		return window.getComputedStyle(element,null).getPropertyValue(value);
+	 	} else {
+	 		alert('NO window.getcomputedvalue');
+	 	}
+	 }
+		
+	</script>
 	<style type="text/css">
 		.element {
 			background: pink;
@@ -17,11 +40,20 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/pcss.css">
 
 </head>
-<body>
+<body id="mybody">
 
-<div class="fixed">
+<div class="mobile_on">mobile_on</div>
+<div class="tablet_only">tablet_only</div>
+<div class="desktop_only">desktop_only</div>
+<div class="mobile_and_tablelet">mobile_and_tablelet</div>
+<div class="tableet_and_desktop">tableet_and_desktop</div>
+<dir class="all_views">all_views</dir>
+
+<div class="fixed" id="fixbar">
 	position: fixed
 </div>
+
+<div class="bkimg"></div>
 
 <ul class="ulp1">
 	<li>
@@ -224,6 +256,53 @@
 <a href="#" class="btnup">Button </a>
 
 <p class="firstleline"> i really want to quit , this is not the first time. i hava suffered a lot of unfair treatment ,improve my english sill and front-end tech could be the only way to take me out of this stituation</p>
+
+<nav class="floatnavigation">
+	<ul>
+		<li>
+			<a href="#">First element</a>	
+		</li>
+		<li>
+			<a href="#">Second element</a>	
+		</li>
+		<li>
+			<a href="#">Third element</a>	
+		</li>
+
+	</ul>
+</nav>
+
+<div class="element-circle-white"></div>
+<div class="element-circle-red"></div>
+<div class="element-circle-blue"></div>
+
+<form class="formc">
+	<div class="loginWrapper">
+		<input type="text" placeholder="username">
+	</div>
+	<div class="passwordWrapper">
+		<input type="password" placeholder="password">
+	</div>
+	<div class="submitWrapper">
+		<input type="submit" placeholder="submit" value="送出">
+	</div>
+</form>
+
+<fieldset>
+	<legend>登錄資料</legend>
+	<div class="filedKeeper">
+		<label for="input_login">Login</label>
+		<div class="inputKeeper">
+			<input type="text" name="name" value="" id="input_login" placeholder="input your name">
+		</div>
+	</div>
+	<div class="filedKeeper">
+		<label for="input_pwd">Password</label>
+		<div class="inputKeeper">
+			<input type="text" name="name" value="" id="input_pwd" placeholder="input your password">
+		</div>
+	</div>
+</fieldset>
 
 </body>
 </html>
