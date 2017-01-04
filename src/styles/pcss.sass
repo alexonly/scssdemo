@@ -523,18 +523,42 @@ $mq_small_only: "(max-width: 480px)"
   +triangleright(8px, 8px, #fff)
 
 fieldset
+ margin-bottom: 20px
  width: auto
  border: 2px dotted hsl(123, 45%, 45%) 
 
 .filedKeeper
+ margin-bottom: 1%
  position: relative
 
  label
   position: absolute
   width: 150px
   left: 0px  
+ .inputKeeper
+  width: 30%
+  margin-left: 200px
+
+ & ~ textarea
+  resize : none
+  width : 40%
+  height: 40%
+  border: 2px solid hsl(256, 45%, 45%)
 
 
+.selectWrapper
+ width : 300px
+ border : 2px solid hsl(128, 45%, 45%)
+ overflow: hidden
+ position: relative
 
+ &:after
+  +triangledown(8px, 6px, hsl(315, 45%, 45%))
+  content: ''
+  position: absolute
+  right: 5px
+  margin-top: -2px  // -8/2(trangledown height)  +  2(container border)
+  top : 50%
 
-
+ select
+  width: 105%

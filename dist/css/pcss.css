@@ -544,17 +544,51 @@ p.firstleline:first-line {
 }
 
 fieldset {
+  margin-bottom: 20px;
   width: auto;
   border: 2px dotted #3fa644;
 }
 
 .filedKeeper {
+  margin-bottom: 1%;
   position: relative;
 }
 .filedKeeper label {
   position: absolute;
   width: 150px;
   left: 0px;
+}
+.filedKeeper .inputKeeper {
+  width: 30%;
+  margin-left: 200px;
+}
+.filedKeeper ~ textarea {
+  resize: none;
+  width: 40%;
+  height: 40%;
+  border: 2px solid #5b3fa6;
+}
+
+.selectWrapper {
+  width: 300px;
+  border: 2px solid #3fa64d;
+  overflow: hidden;
+  position: relative;
+}
+.selectWrapper:after {
+  width: 0;
+  height: 0;
+  border-width: 8px 3px 0 3px;
+  border-color: #a63f8d transparent transparent transparent;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  right: 5px;
+  margin-top: -2px;
+  top: 50%;
+}
+.selectWrapper select {
+  width: 105%;
 }
 
 /*# sourceMappingURL=pcss.css.map */
