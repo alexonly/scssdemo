@@ -591,4 +591,59 @@ fieldset {
   width: 105%;
 }
 
+p.containerp {
+  background: #9ea63f;
+  text-align: center;
+}
+
+.containerdiv {
+  background: black;
+  position: relative;
+  height: 150px;
+}
+.containerdiv .elementdiv {
+  width: 100px;
+  height: 100px;
+  background: #e60000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hech7,
+.mach7,
+.fooch7 {
+  text-align: center;
+  padding: 50px;
+}
+
+.hech7,
+.fooch7 {
+  background: #a6503f;
+}
+
+.mach7 {
+  background: #43a63f;
+}
+
+.window_container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.window_container .window_elediv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 200px;
+  height: 200px;
+}
+
 /*# sourceMappingURL=pcss.css.map */
