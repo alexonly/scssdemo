@@ -74,6 +74,21 @@ $circles: sprite-map("newsprite/*.png", $spacing: 20px, $layout: diagonal)
  border-color: transparent transparent transparent $color
  border-style: solid
 
+=displayFlex
+ display: -webkit-box
+ display: -moz-box
+ display: -ms-flexbox
+ display: -webkit-flex
+ display: flex
+
+=flexOrder($number)
+ -webkit-box-ordinal-group: $number
+ -moz-box-ordinal-group: $number
+ -ms-flex-order: $number
+ -webkit-order: $number
+ order: $number
+
+
 $imageRoot: "../img"
 
 
@@ -162,8 +177,11 @@ p,span
  width: 100%
  background: hsl(263, 55%, 85%)
 
+html,
 body
  padding-top: 100px 
+ min-height: 100%
+ height: 100%
 
 .relativeblock1
  position: relative
@@ -615,5 +633,86 @@ p.containerp
   background: hsl(0, 45%, 100%)
   width: 200px
   height: 200px
+
+.flexContainer
+ margin-top: 40px
+ +displayFlex
+ background: hsl(170, 55%, 35%)
+ //height: 100%
+ align-items: baseline
+ align-content: space-around
+ flex-wrap: wrap
+ justify-content: space-between
+ flex-direction: column
+
+ .blue
+  background: hsl(240, 55%, 45%)
+ .green
+  background: hsl(120, 55%, 45%)
+ .yellow
+  background: hsl(60, 55%, 45%)
+
+ .h300
+  height: 300px
+  font-size: 8px
+ .h200
+  height: 200px
+  font-size: 20px
+ .h100
+  height: 100px   
+  font-size: 30px
+  margin-top: 20px 
+
+.w100
+ width: 100px  
+
+
+.flexcontainer2
+ +displayFlex
+ flex-flow: row wrap
+ 
+
+ & > *
+  padding: 10px
+  flex: 1 1 100%
+
+ header
+  background: hsl(5, 75%, 45% ) 
+
+ footer
+  background: hsl(242, 65%, 75%) 
+
+ main
+  background: hsl(61, 75%, 55%) 
+  flex: 3 1 auto
+ aside
+  background: hsl(125, 65%, 55%) 
+  flex: 0 0 auto
+
+.flexcontainer3
+ margin-top: 30px
+ +displayFlex
+ 
+
+ & > *
+  padding: 20px
+
+ .firstfl
+  background: hsl(135, 65%, 65%)
+  +flexOrder(1)
+ 
+ .secondfl 
+  background: hsl(310, 65%, 65%)
+  +flexOrder(2)
+
+@media screen and (max-width: 600px)  
+ .flexcontainer3
+  flex-flow: row wrap
+  & > *
+   flex: 1 1 100%
+  .firstfl
+   +flexOrder(2)
+  .secondfl
+   +flexOrder(1)
 
 
