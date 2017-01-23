@@ -8,12 +8,22 @@
 
 	 function showFrameSize() {
 	 	// alert("showframe");
-	 	var width, height, estimatedEle;
+	 	var width, height, estimatedEle, hoverObj;
 	 	estimatedEle = document.getElementById("fixbar");
 	 	width = getcomputedstyle(estimatedEle, "width");
 	 	height = getcomputedstyle(estimatedEle, "height");
 	 	console.log("<span>" + width + " * " + height + "</span>");
 	 	estimatedEle.innerHTML = "<span>" + width + " * " + height + "</span>";
+
+	 	hoverObj = document.querySelector('.showHover');
+	 	hoverObj.addEventListener("mouseover", hoverobjMouseOver);
+
+
+	 }
+
+	 function hoverobjMouseOver() {
+	 	var animationObj = document.querySelector('.rollin_obj');
+	 	animationObj.classList.toggle('rollin');
 	 }
 
 	 function getcomputedstyle(element, value) {
@@ -26,6 +36,7 @@
 	 }
 		
 	</script>
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<style type="text/css">
 		.element {
 			background: pink;
@@ -367,6 +378,97 @@ magni voluptas dicta inventore necessitatibus omnis officia.</div>
 	<div class="secondfl">Second</div>
 </div>
 
+<div class="containerclac">
+	<div class="firstcla">First</div>
+	<div class="secondcla">Second</div>
+	
+</div>
 
+<table class="radialgradient">
+	<tr>
+		<td><div class="gradient-04"></div></td>
+		<td><div class="gradient-05"></div></td>
+		<td><div class="gradient-06"></div></td>		
+	</tr>
+	<tr>
+		<td><div class="gradient-07"></div></td>
+		<td><div class="gradient-08"></div></td>
+		<td><div class="gradient-09"></div></td>		
+	</tr>
+	<tr>
+		<td><div class="gradient-10"></div></td>
+		<td><div class="gradient-11"></div></td>
+		<td><div class="gradient-12"></div></td>		
+	</tr>
+	
+</table>
+
+<div class="container_shadow">
+	<div class="container_shadow_box">
+		<div class="bottom_right">bottom right</div>
+	</div>
+	<div class="container_shadow_box">
+		<div class="bottom_left">bottom left</div>
+	</div>
+	<div class="container_shadow_box">
+		<div class="top_right">top right</div>
+	</div>
+	<div class="container_shadow_box">
+		<div class="top_left">top left</div>
+	</div>
+	<div class="container_shadow_box">
+		<div class="inset_bottom_left">inset_bottom_left</div>
+	</div>	
+</div>
+
+<div class="aniContainer">
+	<div class="rollin_obj"></div>
+</div>
+<div class="showHover">Show hover effect</div>
+
+<ul class="bold_list_fix">
+	<li><a href="#" data-alt="First">First</a></li>
+	<li><a href="#" data-alt="Second">Second</a></li>
+	<li><a href="#" data-alt="Third">Third</a></li>
+	<li><a href="#" data-alt="Fourth">Fourth</a></li>
+	<li><a href="#" data-alt="Fifth">Fifth</a></li>
+</ul>
+
+<div class="gird70f12Con">
+	<div class="gird70f12">7 of 12 grid system</div>
+
+</div>
+
+<ul class="menu-multilevel">
+<li>
+<a href="#">Level one - item one</a>
+<ul>
+<li><a href="#">Level two - item one</a></li>
+<li><a href="#">Level two - item two</a></li>
+<li><a href="#">Level two - item three</a></li>
+<li><a href="#">Level two - item four</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Level two - item one</a>
+<ul>
+<li><a href="#">Level two - item one</a></li>
+<li><a href="#">Level two - item two</a></li>
+<li><a href="#">Level two - item three</a></li>
+<li><a href="#">Level two - item four</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Level one - item three</a>
+<ul>
+<li><a href="#">Level three - item one</a></li>
+<li><a href="#">Level three - item two</a></li>
+<li><a href="#">Level three - item three</a></li>
+<li><a href="#">Level three - item four</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="specialBtn">SB</div>
 </body>
 </html>

@@ -21,6 +21,9 @@ $circles: sprite-map("newsprite/*.png", $spacing: 20px, $layout: diagonal)
   height: 0
   clear: both
 
+.clearfix
+ +clearfix
+
 =colorplaceholder
  &:-ms-input-placeholder,
  &:-moz-placeholder,
@@ -31,6 +34,7 @@ $circles: sprite-map("newsprite/*.png", $spacing: 20px, $layout: diagonal)
  width: $w
  height: $h
  background: $c
+
 
 =circle($r, $c)
  width: $r
@@ -87,6 +91,52 @@ $circles: sprite-map("newsprite/*.png", $spacing: 20px, $layout: diagonal)
  -ms-flex-order: $number
  -webkit-order: $number
  order: $number
+
+=animationAll($time)
+ -webkit-transition: all $time ease-in-out
+ -moz-transition: all $time ease-in-out
+ -o-transition: all $time ease-in-out
+ transition: all $time ease-in-out
+
+=grid($column, $divider)
+ width: percentage($column/$divider)
+
+=push($column, $divider) 
+ margin-left: percentage($column/$divider)
+
+=menuMultilevel
+ list-style: none
+ padding: 0
+
+ & > li
+  float: left
+  display: inline-block
+  margin-right: 10px
+  position: relative
+
+  & > ul
+   display: none
+   list-style: none
+   padding: 0
+
+
+  &:hover
+   ul
+    display: block
+    position: absolute
+    left: 0 
+
+=customButton($bc, $bw, $br, $bs)
+ border:
+  color: $bc
+  width: $bw
+  radius: $br
+  style: $bs    
+
+=centerText
+ +displayFlex
+ align-items: center
+ justify-content: center
 
 
 $imageRoot: "../img"
@@ -715,4 +765,163 @@ p.containerp
   .secondfl
    +flexOrder(1)
 
+.containerclac
+ margin-top: 30px
+ +clearfix
 
+ & > *
+  float: left
+  height: 100px
+  padding: 10px
+
+ .firstcla
+  width: 100px
+  background: hsl(65, 65%, 85%)
+
+ 
+ .secondcla     
+  width: calc(100% - 100px)
+  background: hsl(245, 65%, 85%)
+
+.radialgradient
+ div[class^="gradient"]
+  height: 100px
+  width: 100px
+  margin-bottom: 20px
+ td:nth-child(n + 1)
+  background: transparent 
+
+ .gradient-04
+  background: radial-gradient(closest-side at 50% 50%, red black)   
+ .gradient-05
+  background: radial-gradient(closest-side at 10% 10%, red black)  
+ .gradient-06
+  background: radial-gradient(closest-side at 50% 10%, red black) 
+ .gradient-07
+  background: radial-gradient(closest-corner at 50% 50%, red black) 
+ .gradient-08
+  background: radial-gradient(closest-corner at 10% 10%, red black)  
+
+.container_shadow
+ +displayFlex
+ flex-flow: row wrap
+ align-items: stretch
+ align-content: space-around
+ justify-content: space-around
+
+ width: 500px
+ height: 500px
+
+ .container_shadow_box
+  width: 150px
+  height: 150px
+
+  & > *
+   +animationAll(1s)
+   height: 100%
+   font-family: 'Russo One', sans-serif
+
+  &:nth-child(2n+1)
+   background: hsl(66, 74%, 75%)
+  &:nth-child(2n+2)
+   background: hsl(266, 74%, 75%)
+
+ .bottom_right:hover
+  box-shadow: 5px 5px 6px 0 #000
+
+
+ .bottom_left:hover
+  box-shadow: -5px 5px 6px 0 #000
+
+ .top_right:hover
+  box-shadow: 5px -5px 6px 0 #000
+
+ .top_left:hover
+  box-shadow: -5px -5px 6px 0 #000  
+
+ .inset_bottom_left:hover
+  box-shadow: inset 5px -5px 6px 0 #000
+
+
+@keyframes roll_in
+ from
+  margin-left: 100%
+  opacity: 0.3
+
+
+ to
+  margin-left: 0%
+  opacity: 1
+
+.aniContainer  
+ width: 600px
+ border: 1px
+
+ .rollin
+  width: 100px
+  height: 100px
+  background: hsl(345, 85%, 35%)
+
+  animation:
+   duration: 2s
+   name: roll_in
+   delay: 1s
+   iteration-count: 2
+   fill-mode: both
+
+.showHover
+ height: 30px
+ width: 130px
+
+ word-break: keep-all
+ white-space: nowrap
+ border: 1px solid hsl(135, 45%, 55%)
+ margin-bottom: 10px
+ margin-top: 30px
+ background: hsl(240, 75%, 85%) 
+
+ +displayFlex
+ align-items: center
+ justify-content: center
+
+ &:horver
+
+.bold_list_fix
+ @extend .clearfix
+ li,a
+  +animationAll(200ms)
+  display: inline-block
+  text-align: center
+ 
+ a:hover
+  font-weight: bold
+
+ a::after
+  display: block
+  content: attr(data-alt) 
+  font-weight: bold
+  height: 1px
+  color: transparent
+  overflow: hidden
+  visibility: hidden 
+
+.testExtend
+ @extend .showHover  
+
+.gird70f12
+ +grid(7, 12)
+ background: hsl(255, 85%, 75%)
+
+.gird70f12Con
+ width: 120px
+ background: hsl(66, 85%, 75%)
+
+.menu-multilevel
+ +clearfix
+ +menuMultilevel
+
+.specialBtn
+ +centerText
+ +customButton(hsl(0, 0%, 35%), 10px 6px, 10px 60px, dashed)
+ width: 400px
+ height: 100px
