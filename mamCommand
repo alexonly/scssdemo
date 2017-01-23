@@ -1,0 +1,11 @@
+
+Verbose: Input Parameters
+ Path to input application: /Users/fannysheng/Desktop/./IntuneWrapping/OriApp/CathayLifeAppStore.ipa
+  Path to output application: /Users/dev1/Desktop/./IntuneWrapping/wApp/wApp.ipa
+   Provisioning profile: /Users/dev1/Desktop/./IntuneWrapping/OriApp/CathayAppStore_InHouse_2017.mobileprovision
+    SHA1 Hash of certificate: 0CFDA9E07D328E164A037E0DBC538DEBE92ADD00
+
+    --------
+    /Users/fannysheng/Desktop/Contents/MacOS/IntuneMAMPackager -i /Users/fannysheng/Desktop/IntuneWrapping/OriApp/CathayLifeAppStore.ipa -o /Users/fannysheng/Desktop/IntuneWrapping/wApp/wApp.ipa -p /Users/fannysheng/Desktop/IntuneWrapping/OriApp/CathayAppStore_InHouse_2017.mobileprovision -c 0CFDA9E07D328E164A037E0DBC538DEBE92ADD00  -v true
+
+
